@@ -7,6 +7,7 @@ public class PatternMethod {
     //Global variables
     static int userInput;
     static boolean choose = false;
+
     public static void main(String[] args) {
 
         //Input Class
@@ -42,5 +43,4 @@ public class PatternMethod {
             return patternMethod(methodNum - 5);
         }
     }
-
 }
