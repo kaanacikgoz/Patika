@@ -1,12 +1,13 @@
 package Week2.SalaryCalculator;
 
 public class Employee {
-
+    //Variables
     String name;
     float salary;
     int workHours;
     int hireYear;
 
+    //Constructor method of this class
     Employee(String name, float salary, int workHours, int hireYear) {
         this.name = name;
         this.salary = salary;
@@ -14,6 +15,7 @@ public class Employee {
         this.hireYear = hireYear;
     }
 
+    //Calculate tax according to salary
     private float tax() {
         float tax=0;
         if (this.salary>1000) {
@@ -22,6 +24,7 @@ public class Employee {
         return tax;
     }
 
+    //Calculate bonus according to work hours
     private float bonus() {
         float bonus=0;
         if (this.workHours>40) {
@@ -30,6 +33,7 @@ public class Employee {
         return  bonus;
     }
 
+    //Calculate raise according to work year
     private float raiseSalary() {
         float raise=0;
         int currentYear=2021;
@@ -47,6 +51,7 @@ public class Employee {
         return raise;
     }
 
+    //Results print
     void printToString() {
         System.out.print("Name: "+this.name+
                 "\nSalary: "+this.salary+
