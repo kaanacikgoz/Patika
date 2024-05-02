@@ -10,8 +10,15 @@ public class Ring {
     int maxWeight;
 
     public Ring(Fighter f1, Fighter f2, int minWeight, int maxWeight) {
-        this.f1 = f1;
-        this.f2 = f2;
+        Random random = new Random();
+        int randomNum = random.nextInt(2); //It creates 0 or 1
+        if (randomNum==0) {
+            this.f1 = f1;
+            this.f2 = f2;
+        } else {
+            this.f1 = f2;
+            this.f2 = f1;
+        }
         this.minWeight = minWeight;
         this.maxWeight = maxWeight;
     }
@@ -19,7 +26,7 @@ public class Ring {
     public void run() {
 
         if (checkWeight()) {
-            whoStart(f1,f2);
+
             while (f1.health > 0 && f2.health > 0) {
                 System.out.println("======== YENİ ROUND ===========");
                 f2.health = f1.hit(f2);
@@ -54,16 +61,6 @@ public class Ring {
         }
 
         return false;
-    }
-
-    public void whoStart(Fighter f1, Fighter f2) {
-        Random random = new Random();
-        int fiftyChance = random.nextInt(2); // it returns 0 or 1
-        String f1Name = f1.name;
-        if (fiftyChance==1) {
-            f1.name = this.f2.name;
-            f2.name = f1Name;
-        }
     }
 
     public void printScore() {
