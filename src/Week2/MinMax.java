@@ -28,7 +28,7 @@ public class MinMax {
         createArray();
         System.out.print("Enter the num: ");
         int userNum = input.nextInt();
-        int min=0, max=Integer.MAX_VALUE;
+        int min=Integer.MIN_VALUE, max=Integer.MAX_VALUE;
         for (int num:list) {
             if (num<userNum && num>min) {
                 min = num;
