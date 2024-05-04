@@ -7,6 +7,7 @@ public class SortedArray {
 
     static int[] list;
     static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
 
         createArray();
